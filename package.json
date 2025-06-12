@@ -1,12 +1,13 @@
 {
   "name": "jsend-middleware",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Express middleware for standardized JSend JSON responses",
   "main": "index.js",
   "exports": {
     ".": {
       "import": "./index.js",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
   },
   "repository": {
@@ -27,7 +28,7 @@
   },
   "homepage": "https://github.com/AhmedRedaG/jsend-middleware#readme",
   "peerDependencies": {
-    "express": "^4.0.0"
+    "express": ">=4.0.0"
   },
   "engines": {
     "node": ">=14.0.0"
