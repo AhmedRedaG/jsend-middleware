@@ -57,6 +57,7 @@ app.listen(3000, () => {
 The middleware attaches a `jsend` object to the Express `res` object, providing three methods:
 
 #### 1. Success Response
+
 Used for successful requests.
 
 ```javascript
@@ -80,6 +81,7 @@ res.jsend.success({ user: { id: 1, name: "John Doe" } }, 201, "ok");
 ```
 
 #### 2. Fail Response
+
 Used for client-side errors (e.g., invalid input).
 
 ```javascript
@@ -92,6 +94,7 @@ res.jsend.fail({ error: "Invalid email format" }, 400);
 ```
 
 #### 3. Error Response
+
 Used for server-side or unexpected errors.
 
 ```javascript
@@ -137,20 +140,25 @@ res.jsend.success({ message: "Configured!" });
 ### Jsend Class
 
 #### Constructor
+
 ```javascript
-new Jsend(res)
+new Jsend(res);
 ```
+
 - `res`: Express response object (required).
 - Throws an error if `res` is not a valid Express response object.
 
 #### Methods
+
 - `success(data, status, statusLabel)`
+
   - `data`: Optional object or null (default: `null`).
   - `status`: HTTP status code (default: `200`).
   - `statusLabel`: Custom status label (default: `"success"`).
   - Throws an error if `data` is not JSON-serializable.
 
 - `fail(data, status, statusLabel)`
+
   - `data`: Optional object or null (default: `null`).
   - `status`: HTTP status code (default: `400`).
   - `statusLabel`: Custom status label (default: `"fail"`).
@@ -164,9 +172,11 @@ new Jsend(res)
   - Throws an error if `message` is not a non-empty string or `options.extra` is not an object.
 
 ### jsendMiddleware
+
 ```javascript
-jsendMiddleware(config)
+jsendMiddleware(config);
 ```
+
 - `config`: Optional configuration object.
   - `successLabel`: Default label for success responses (default: `"success"`).
   - `failLabel`: Default label for fail responses (default: `"fail"`).
@@ -175,6 +185,7 @@ jsendMiddleware(config)
 ## Error Handling
 
 The middleware includes robust validation:
+
 - Ensures the Express `res` object has required methods (`status`, `json`).
 - Validates that `data` in `success` and `fail` is an object or `null`.
 - Ensures `message` in `error` is a non-empty string.
@@ -191,7 +202,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contributing
 
-Contributions are welcome! Please submit a pull request or open an issue on the [GitHub repository](https://github.com/your-repo/jsend-middleware).
+Contributions are welcome! Please submit a pull request or open an issue on the [GitHub repository](https://github.com/ahmedredag/jsend-middleware).
 
 ## Acknowledgments
 
