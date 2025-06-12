@@ -116,4 +116,6 @@ function jsendMiddleware(config = {}) {
   };
 }
 
-export default jsendMiddleware;
+// Export for both CommonJS and ES Modules
+module.exports = jsendMiddleware;
+module.exports.default = jsendMiddleware;

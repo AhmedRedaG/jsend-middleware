@@ -1,9 +1,8 @@
 {
   "name": "jsend-middleware",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Express middleware for standardized JSend JSON responses",
   "main": "index.js",
-  "type": "module",
   "exports": {
     ".": {
       "import": "./index.js",
